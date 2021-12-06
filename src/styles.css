@@ -1,12 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 *{
+    justify-content: center;
+
    
    
   
 }
 body{
    
-    padding: 100px;
+    padding: 10px;
+    justify-content: center;
+
 }
 div{
     

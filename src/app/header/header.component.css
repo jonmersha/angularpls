@@ -1,0 +1,10 @@
+.nav.navbar-nav{
+    font-size: 15px;
+}
+#serchForm{margin: 100px;}
+@media (max-width:1200px){
+    #serchForm{display: non;}
+}
+li>a.active{
+    color:#F97924;
+}

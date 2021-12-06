@@ -1,0 +1,36 @@
+<div>
+    <img class='event-image' [src]="event?.imageUrl" [alt]="event?.name"> 
+  
+    <div class="row">
+      <div class="col-md-11">
+        <h2>{{event?.name}} </h2>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class='container'><strong>Date:</strong> {{event?.date}}</div>
+        <div class='container'><strong>Time:</strong> {{event?.time}}</div> 
+        <div class='container'><strong>Price:</strong> ${{event?.price}}</div>
+      </div>
+      <div class="col-md-6">
+        <address class='container'>
+          <strong>Address:</strong><br />
+          {{event?.location?.address}}<br />
+          {{event?.location?.city}}, {{event?.location?.country}}
+        </address>
+        
+      </div>
+      <div class="col-md-6">
+        <strong>Session:</strong><br />
+        <p *ngFor='let session of event.settion'>
+       ID: {{session.id}}<br/>
+       Name: {{session.name}}<br/>
+       Presenter: {{session.presenter}}<br/>
+       Duration: {{session.duration}}<br/>
+       Abstract: {{session.abstract}}
+      
+      </div>
+    </div>
+  </div>
