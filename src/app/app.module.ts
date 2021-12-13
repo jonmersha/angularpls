@@ -12,7 +12,8 @@ import {
   CreatEventComponent,
   EventListComponent,
   EventService,
-  EventListResolver
+  EventListResolver,
+  
 
 } from './event/index'
 
@@ -21,6 +22,8 @@ import { NotificationService } from './common/toaster-service';
 import { HeaderComponent } from './header/header.component';
 import { appRoutes } from './routes';
 import {Error404Component} from './error/404.componen'
+import { AuthService } from './user/auth.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -34,10 +37,13 @@ import {Error404Component} from './error/404.componen'
     EventDetailComponent,
     Error404Component,
     CreatEventComponent,
+    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
     ToastrModule.forRoot(),
      RouterModule.forRoot(appRoutes)
   ],
@@ -46,6 +52,7 @@ import {Error404Component} from './error/404.componen'
     NotificationService,
     EventRouteAcitivator,
     EventListResolver,
+    AuthService,
     {provide:'canDeactivateEvent',
     useValue:checkDirtyState}
   ],

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class CreatEventComponent implements OnInit {
   isDirty:boolean=true
+  newEvent:any
   constructor(private router:Router) {
 
    }
@@ -16,6 +17,9 @@ export class CreatEventComponent implements OnInit {
   }
   cancel(){ 
     this.router.navigate(['/events'])
+  }
+  saveEvent(formValues:any){
+    console.log(formValues)
   }
 
 }

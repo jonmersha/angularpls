@@ -30,10 +30,23 @@
         <div class="navbar-header navbar-right">
           <ul class="nav navbar-nav">
             <li>
-              <a [routerLink]="['/user/profile']">Welcome John</a>
+              <a *ngIf="auth.isAuthonticated()" [routerLink]="['user/profile']">Welcome {{auth.currentUser.firstName}} </a>
+            </li>
+            <li>
+              <a *ngIf="!auth.isAuthonticated()" (click)="auth.sightOut()" [routerLink]="['user/login']"> Login</a>
+              <a *ngIf="auth.isAuthonticated()" (click)="auth.sightOut()" [routerLink]="['user/login']"> LogOut</a>
+            </li>
+            <li>
+              <a *ngIf="!auth.isAuthonticated()" (click)="auth.sightOut()" [routerLink]="['user/profile']"> signUp</a>
+
             </li>
           </ul>
         </div>
+        <div class="navbar-header navbar-right">
+          <ul class="nav navbar-nav">
+           
+          </ul></div>
+       
         <form id="searchForm"  class="navbar-form navbar-right"  >
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search Sessions" >
